@@ -1,23 +1,23 @@
 import { defineStore } from 'pinia';
+import { login } from "@/api/user";
+import { setToken } from '@/utils/permission';
 
 export default defineStore('user', {
 	state: () => {
 		return {
 			token: '',
-			age: 18,
 		};
 	},
 	getters: {
-		getAge(): number {
-			return this.age;
-		},
+
 	},
 	actions: {
-		add() {
-			this.age++;
+		async login(user: LoginUser): Promise<void> {
+			// const res = await login(user)
+			// const token = res.data;
+			// this.token = token
+			// setToken(token)
 		},
-		sub() {
-			this.age--;
-		},
+
 	},
 });

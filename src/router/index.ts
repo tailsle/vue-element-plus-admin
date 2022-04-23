@@ -1,3 +1,4 @@
+import { getToken } from '@/utils/permission';
 import { createRouter, createWebHistory } from 'vue-router';
 import routes from './routes';
 const router = createRouter({
@@ -6,7 +7,16 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	next();
+	// const token = getToken()
+	// console.log(token);
+	
+	// if (!token) {
+	// 	next({path:'/login'})
+	// } else {
+	// 	if (to.path === '/login') next({path:'/'})
+	// 	else next()
+	// }
+	// next()
 });
 
 // router.afterEach((to,from,next)=>{

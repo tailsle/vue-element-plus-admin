@@ -1,8 +1,10 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { ElMessage } from "element-plus";
 
-const instance = axios.create({
+const instance: AxiosInstance = axios.create({
 	timeout: 5 * 1000,
 	baseURL: import.meta.env.VITE_BASE_URL as string,
+	withCredentials: true
 });
 
 instance.interceptors.request.use(
@@ -19,8 +21,9 @@ instance.interceptors.response.use(
 		return res.data;
 	},
 	(error: any) => {
+		ElMessage.error(error.message)
 		return Promise.reject(error);
 	},
 );
 
-export default instance;
+export default instance
