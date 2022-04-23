@@ -13,10 +13,10 @@ export default defineStore('user', {
 	},
 	actions: {
 		async login(user: LoginUser): Promise<void> {
-			// const res = await login(user)
-			// const token = res.data;
-			// this.token = token
-			// setToken(token)
+			const res = await login(user)
+			const token = res.data;
+			this.token = token			
+			setToken(token)
 		},
 
 	},

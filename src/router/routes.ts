@@ -4,10 +4,18 @@ const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
 		component: () => import('@/layout/default.vue'),
+		meta: {
+			title: '首页',
+			requireAuth: true
+		}
 	},
 	{
 		path: '/login',
 		component: () => import('@/layout/Login.vue'),
+		meta: {
+			title: '登录页',
+			requireAuth: false
+		}
 	},
 	{
 		path: '/404',
